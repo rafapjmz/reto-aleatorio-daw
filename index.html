@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ruleta aleatoria de retos de programación para practicar JavaScript, PHP, Java y C.">
+  <title>Ruleta de retos DWCLE · rafapjmz</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/233956732?v=4&s=64">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="volver" href="https://rafapjmz.github.io/rafapjmz/">← Volver al portfolio</a>
+      <p class="etiqueta-superior">Proyecto personal · Prácticas de DWCLE</p>
+      <h1>Ruleta de <span>retos</span></h1>
+      <p class="bajada">¿No sabes qué practicar hoy? Filtra por tecnología y dificultad, gira la ruleta y acepta el reto. Todo con <code>map</code>, <code>filter</code> y <code>reduce</code>.</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="panel" aria-label="Generador de retos">
+      <div class="filtros">
+        <label>Tecnología
+          <select id="filtro-tecnologia">
+            <option value="todas">Todas</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="Java">Java</option>
+            <option value="C">C</option>
+          </select>
+        </label>
+        <label>Dificultad
+          <select id="filtro-dificultad">
+            <option value="todas">Todas</option>
+            <option value="Fácil">Fácil</option>
+            <option value="Media">Media</option>
+            <option value="Reto">Reto</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="stats" id="stats" aria-live="polite"></p>
+
+      <div class="ruleta-zona">
+        <div class="puntero" aria-hidden="true"></div>
+        <div class="ruleta" id="ruleta" aria-hidden="true"></div>
+        <div class="ruleta-centro" aria-hidden="true">?</div>
+      </div>
+
+      <button class="btn-principal" id="girar" type="button">Girar ruleta 🎲</button>
+
+      <article class="resultado" id="resultado" hidden aria-live="polite">
+        <div class="etiquetas">
+          <span class="etiqueta" id="r-tecnologia"></span>
+          <span class="etiqueta" id="r-dificultad"></span>
+        </div>
+        <h2 id="r-titulo"></h2>
+        <p id="r-descripcion"></p>
+        <div class="acciones">
+          <button class="btn-secundario" id="ver-pista" type="button" aria-expanded="false">Ver pista 💡</button>
+          <button class="btn-secundario" id="guardar" type="button">Guardar reto ⭐</button>
+        </div>
+        <p class="pista" id="r-pista" hidden></p>
+      </article>
+    </section>
+
+    <section class="guardados" aria-label="Retos guardados">
+      <h2>Mis retos guardados <span id="num-guardados">0</span></h2>
+      <ul id="lista-guardados"></ul>
+      <p class="vacio" id="vacio">Todavía no has guardado ningún reto.</p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Hecho por <a href="https://github.com/rafapjmz" target="_blank" rel="noopener noreferrer">rafapjmz</a> · Málaga · <a href="https://github.com/rafapjmz/reto-aleatorio-daw">Código en GitHub</a></p>
+    <p class="ai-note">Con un poco de ayuda de IA.</p>
+  </footer>
+
+  <div class="confeti" id="confeti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
